@@ -1,5 +1,12 @@
 # Recurrent Neural Networks course project: time series prediction and text generation
 
+## Environment setup
+1. source activate aind2
+2. pip install -r requirements.txt
+3. jupyter notebook RNN_project.ipynb
+
+Alternatively if run on AWS, jupyter notebook --ip=0.0.0.0 --no-browser
+
 ## Accelerating the Training Process 
 
 If your code is taking too long to run, you will need to either reduce the complexity of your chosen RNN architecture or switch to running your code on a GPU.  If you'd like to use a GPU, you have two options:

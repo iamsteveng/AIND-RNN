@@ -85,6 +85,28 @@ def window_transform_text(text,window_size,step_size):
     inputs = []
     outputs = []
     
-
+    # get the length of the series
+    text_len = len(text)
+    text = list(text)
+    
+    # iterate from index 0
+    idx = 0
+    for val in text:
+        # check whether the end is reached or not, if yes, then leave the loop
+        if ((idx+window_size) >= text_len):
+            break
+        # get the series values of window size
+        inputs.append(text[idx:idx+window_size])
+        # get the series value after the window size
+        outputs.append(text[idx+window_size])
+        # next step
+        idx = idx + step_size
+    
+    # reshape each
+    inputs = np.asarray(inputs)
+    inputs.shape = (np.shape(inputs)[0:2])
+    outputs = np.asarray(outputs)
+    outputs.shape = (len(outputs),1)
     
     return inputs,outputs
+
